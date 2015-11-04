@@ -1,0 +1,187 @@
+html,body,div,span,p,a,img,ul,li,canvas,section{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}  
+html, body {
+    -webkit-text-size-adjust:none;/*禁用iPhone中Safari的字号自动调整*/
+    -webkit-user-select: none;   /* 禁止选中文本（如无文本选中需求，此为必选项） */
+    user-select: none;
+    height: 100%;
+}
+body { font-size: 62.5%; line-height: 1; font-family: Tahoma,Arial,Roboto,"Droid Sans","Helvetica Neue","Droid Sans Fallback","Heiti SC",Helvetica, STHeiTi, sans-serif; }  /* 1em=16px*62.5%=10px, 1.2em=12px */
+
+a, img { -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */ }
+img { border: 0; max-width: 100%; }  
+a{ display:inline-block; text-decoration: none;}
+
+a, button { -webkit-tap-highlight-color:rgba(255,255,255,0);  /*可以同时屏蔽ios和android下点击元素时出现的阴影*/ }
+
+::-webkit-input-placeholder { color: #acacac; } /* WebKit browsers */
+:-moz-placeholder { color: #acacac; } /* Mozilla Firefox 4 to 18 */
+::-moz-placeholder { color: #acacac; } /* Mozilla Firefox 19+ */
+:-ms-input-placeholder { color: #acacac; } /* Internet Explorer 10+ */
+
+@-webkit-keyframes load {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes load {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+#container {
+    width:750px;
+    margin:0 auto;
+    position:relative;
+    overflow-x:hidden;
+    font-size:1.2em;
+    height:100%;
+}
+#drawBalloon{
+    background:url(bg.jpg) no-repeat 0 0;
+}
+/*竖屏时使用的样式*/
+@media all and (orientation:portrait) {
+
+}
+/*横屏时使用的样式*/
+@media all and (orientation:landscape) {
+    body {
+        
+    }
+}
+
+.page{
+    width:100%;
+    min-height:100%;
+    position: absolute;
+    top: 0;
+    left:0;
+    -webkit-transform: translate3d(0,0,0); /*激活GPU 3D加速*/
+            transform: translate3d(0,0,0);
+    -webkit-perspective: 1000;
+            perspective: 1000;
+    -webkit-backface-visibility:hidden;
+            backface-visibility:hidden;
+    -webkit-transform-style:preserve-3d;
+            transform-style:preserve-3d;
+}
+
+/* 添彩 */
+#colors {
+    background-color:#fff;
+    border-radius:29px;
+    padding:8px;
+    position:absolute;
+    left:28px;
+    top:680px;
+    width:700px;
+    z-index:10;
+}
+#colors > li {
+    width:81px;
+    height:81px;
+    margin:10px 8px;
+    border-radius:50%;
+    float:left;
+    overflow:hidden;
+    text-indent:-9999px;
+}
+#colors > li:nth-child(1) {
+    background:#0050a1;
+}
+#colors > li:nth-child(2) {
+    background:#02a1e3;
+}
+#colors > li:nth-child(3) {
+    background:#abdced;
+}
+#colors > li:nth-child(4) {
+    background:#ef790b;
+}
+#colors > li:nth-child(5) {
+    background:#f8bc28;
+}
+#colors > li:nth-child(6) {
+    background:#96c730;
+}
+#colors > li:nth-child(7) {
+    background:#d3e6ba;
+}
+#colors > li:nth-child(8) {
+    background:#f79ab5;
+}
+#colors > li:nth-child(9) {
+    background:#e1147f;
+}
+#colors > li:nth-child(10) {
+    background:#ffff00;
+}
+#colors > li:nth-child(11) {
+    background:#a1488e;
+}
+#colors > li:nth-child(12) {
+    background:#ee0000;
+}
+#colors > li:nth-child(13) {
+    background:#4d9b46;
+}
+#colors > li:nth-child(14) {
+    background:#ffffff;
+    border:solid 3px #0050a1;
+}
+#colors > li.checked {
+    background-image:url(color_checked.png);
+    background-repeat:no-repeat;
+    background-position:0 0;
+}
+
+#draw-wrap {
+    width:649px;
+    height:465px;
+    position:absolute;
+    top:10%;
+    left:54px;
+}
+#canvas, #wire {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-tap-highlight-color:rgba(255,255,255,0);
+}
+#wire {
+    background:url(img_wire.png) no-repeat 0 0;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) and (orientation:portrait)
+{
+    #colorTips {
+        bottom:22%;
+    }
+    #colors {
+        bottom:4px;
+    }
+}
