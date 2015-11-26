@@ -59,7 +59,7 @@ a, button { -webkit-tap-highlight-color:rgba(255,255,255,0);  /*可以同时屏�
     height:100%;
 }
 #drawBalloon{
-    background:url(img/bg.jpg) no-repeat 0 0;
+    background:url(../img/bg.jpg) no-repeat 0 0;
 }
 /*竖屏时使用的样式*/
 @media all and (orientation:portrait) {
@@ -152,7 +152,7 @@ a, button { -webkit-tap-highlight-color:rgba(255,255,255,0);  /*可以同时屏�
     border:solid 3px #0050a1;
 }
 #colors > li.checked {
-    background-image:url(img/color_checked.png);
+    background-image:url(../img/color_checked.png);
     background-repeat:no-repeat;
     background-position:0 0;
 }
@@ -173,7 +173,7 @@ a, button { -webkit-tap-highlight-color:rgba(255,255,255,0);  /*可以同时屏�
     -webkit-tap-highlight-color:rgba(255,255,255,0);
 }
 #wire {
-    background:url(img/img_wire.png) no-repeat 0 0;
+    background:url(../img/img_wire.png) no-repeat 0 0;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) and (orientation:portrait)
