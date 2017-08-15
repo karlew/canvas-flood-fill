@@ -6,19 +6,18 @@
     <meta charset="utf-8" />
     <title>bears涂色</title>
     <script>
-        (function (g) {
-			var b, a, e, d, c, h, f; 
-			f = navigator.userAgent.toLowerCase(); 
-			isiOS = f.indexOf("ipad") > -1 || f.indexOf("iphone") > -1; 
-			a = window.devicePixelRatio; 
-			b = window.screen.width || window.screen.availWidth; 
-			e = g / b * a * 160; 
-			d = (isiOS ? "width=" + g : "target-densitydpi=" + e + ", width=" + g + ", initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0"); 
-			c = document.getElementsByTagName("head"); 
-			h = document.createElement("meta"); 
-			h.name = "viewport"; 
-			h.content = d; 
-			c.length > 0 && c[c.length - 1].appendChild(h) 
+        (function (width) {
+			var userAgent = navigator.userAgent.toLowerCase(); 
+			isiOS = userAgent.indexOf("ipad") > -1 || userAgent.indexOf("iphone") > -1; 
+			var dpr = window.devicePixelRatio; 
+			var wWidth = window.screen.width || window.screen.availWidth; 
+			var dpi = width / wWidth * dpr * 160; 
+			metaContent = (isiOS ? "width=" + width : "target-densitydpi=" + dpi + ", width=" + width + ", initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0"); 
+			var head = document.getElementsByTagName("head"); 
+			var meta = document.createElement("meta"); 
+			meta.name = "viewport"; 
+			meta.content = metaContent; 
+			head.length > 0 && head[head.length - 1].appendChild(meta) 
 		}(750));
     </script>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
