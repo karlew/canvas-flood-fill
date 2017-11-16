@@ -22,6 +22,11 @@ $(function() {
 			alert("此处不能上色");
 			return false
 		}
+		//判断是否点在线条上
+		if(colorArr[0] < 50 && colorArr[1] < 50 && colorArr[2] < 50 && colorArr[3] === 255){
+			alert("线条处不能上色");
+			return false
+		}
 		var fillColor = hexToRgb(chooseColor).split(",");
 		fillColor.push(255);
 		floodFillLinear(myCanvas, left, top, fillColor, 80);
